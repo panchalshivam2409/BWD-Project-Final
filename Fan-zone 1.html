@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resident Evil - Fan Zone</title>
+    <link rel="stylesheet" href="C:\Users\SHIVAM\OneDrive\Desktop\Resident Evil Project\CSS 1.css">
+    <style>
+        /* A few extra styles just for the puzzle feedback messages */
+        .success-msg { color: #00ff00; font-weight: bold; margin-top: 10px; display: none; }
+        .error-msg { color: #ff3333; font-weight: bold; margin-top: 10px; display: none; }
+    </style>
+</head>
+<body class="bg-lab"> <header>
+        <h1>Secure Surveillance Room</h1>
+    </header>
+    
+    <nav>
+        <a href="Home Page 1.html">Home</a>
+        <a href="Characters 1.html">Characters</a>
+        <a href="Viruses 1.html">Viruses</a>
+        <a href="Fan-zone 1.html">Fan-Zone</a>
+        <a href="About Us 1.html">About Us</a>
+        <a href="Login Page.html">System Logout</a>
+    </nav>
+
+    <div class="container">
+        <h2>Interactive Puzzles</h2>
+        <p>Test your knowledge of the outbreak. Solve the puzzles below to unlock classified files and hidden items.</p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Terminal Override</h3>
+                <p><strong>System Prompt:</strong> "I am the pharmaceutical giant that hides behind a red and white canopy. I am the architect of the nightmare. What is my name?"</p>
+                <input type="text" id="riddleInput" placeholder="Enter password...">
+                <button class="btn" onclick="checkRiddle()">Submit Password</button>
+                <p id="riddleSuccess" class="success-msg">Access Granted: Welcome back, Wesker.</p>
+                <p id="riddleError" class="error-msg">Access Denied: Security protocols activated.</p>
+            </div>
+
+            <div class="card">
+                <h3>Locker 042</h3>
+                <p><strong>Clue:</strong> The electronic lock requires a 4-digit code. Enter the year the Raccoon City Destruction Incident took place.</p>
+                <input type="number" id="safeInput" placeholder="YYYY">
+                <button class="btn" onclick="checkSafe()">Unlock Locker</button>
+                <p id="safeSuccess" class="success-msg">Lock Disengaged. You found a First Aid Spray!</p>
+                <p id="safeError" class="error-msg">Error: Invalid combination. Warning beep sounds.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkRiddle() {
+            // Get the user's answer, convert to lowercase, and remove extra spaces
+            let answer = document.getElementById("riddleInput").value.toLowerCase().trim();
+            let successTxt = document.getElementById("riddleSuccess");
+            let errorTxt = document.getElementById("riddleError");
+
+            // Hide messages initially
+            successTxt.style.display = "none";
+            errorTxt.style.display = "none";
+
+            // Check if the answer contains "umbrella"
+            if (answer === "umbrella" || answer === "umbrella corp" || answer === "umbrella corporation") {
+                successTxt.style.display = "block";
+            } else {
+                errorTxt.style.display = "block";
+            }
+        }
+
+        function checkSafe() {
+            // Get the user's number input
+            let answer = document.getElementById("safeInput").value;
+            let successTxt = document.getElementById("safeSuccess");
+            let errorTxt = document.getElementById("safeError");
+
+            // Hide messages initially
+            successTxt.style.display = "none";
+            errorTxt.style.display = "none";
+
+            // The Raccoon City incident happened in 1998
+            if (answer === "1998") {
+                successTxt.style.display = "block";
+            } else {
+                errorTxt.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
