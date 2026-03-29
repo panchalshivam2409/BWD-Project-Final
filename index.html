@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Evil - Home</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* --- Custom Umbrella Theme Overrides --- */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            /* Raccoon City Street Background */
+            background-image: url('C:/Users/SHIVAM/OneDrive/Desktop/Resident Evil Project/Home Page Background.jpg');
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Glitch Animation for the Header */
+        .glitch-text {
+            color: #ff3333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glitch 4s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 96%, 100% { text-shadow: none; transform: none; }
+            97% { text-shadow: 2px 0 0 red, -2px 0 0 blue; transform: skewX(2deg); }
+            98% { text-shadow: -2px 0 0 red, 2px 0 0 blue; transform: skewX(-2deg); }
+            99% { text-shadow: 2px 0 0 blue, -2px 0 0 red; }
+        }
+
+        /* Container Glass Effect */
+        .glass-panel {
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid #333;
+        }
+
+        /* Pulsing Alarm Animation for Security Alert */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 5px #ff3333; border-color: #8b0000; }
+            50% { box-shadow: 0 0 25px #ff3333; border-color: #ff3333; }
+            100% { box-shadow: 0 0 5px #ff3333; border-color: #8b0000; }
+        }
+        
+        .umbrella-alert {
+            animation: pulse 2s infinite;
+            border-left: 5px solid #ff3333 !important;
+            background: rgba(40, 0, 0, 0.85);
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-danger py-3">
+        <div class="container">
+            <a class="navbar-brand text-danger fw-bold glitch-text" href="#">UMBRELLA CORP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav text-uppercase fw-bold">
+                    <li class="nav-item"><a class="nav-link active text-danger" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Characters 1.html">Characters</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Media 1.html">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About Us 1.html">About Us</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-outline-danger btn-sm mt-1" href="Login Page.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5 text-center border-bottom border-danger" style="background-color: rgba(74, 0, 0, 0.8);">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-danger glitch-text">Welcome to Raccoon City</h1>
+            <p class="lead text-light mb-0">The Nightmare Begins</p>
+        </div>
+    </header>
+
+    <div class="container mt-5 mb-5 p-4 rounded glass-panel">
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="fs-5 mb-4">
+                    Welcome to the ultimate survival horror database. What started in the Arklay Mountains soon consumed the entirety of Raccoon City, forever altering the world's understanding of bio-organic weapons (B.O.W.s).
+                </p>
+                <p class="text-secondary mb-5">
+                    Use the navigation terminal above to access classified files regarding key individuals, biological threats, and the dark history of the Umbrella Corporation.
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-10 mx-auto">
+                <div class="card umbrella-alert border-dark text-light p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ff3333" class="bi bi-exclamation-triangle-fill me-3" viewBox="0 0 16 16">
+                                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                            <h3 class="card-title text-danger mb-0">Latest Security Alert</h3>
+                        </div>
+                        <p class="card-text fw-bold" style="letter-spacing: 1px;">
+                            WARNING: T-Virus outbreak detected in Sector 4. All personnel are advised to follow immediate quarantine protocols. Trust no one. Aim for the head.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="bg-dark text-center text-light border-top border-danger mt-auto py-4" style="background-color: #0a0a0a !important;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-3 mb-md-0 text-md-start">
+                    <h5 class="text-danger fw-bold glitch-text mb-1" style="font-size: 1.1rem; letter-spacing: 1px;">UMBRELLA CORP</h5>
+                    <p class="small text-secondary mb-0 fst-italic">"Our business is life itself."</p>
+                </div>
+                
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <p class="small text-danger fw-bold mb-0">© 2026<br>BWD Project</p>
+                </div>
+                
+                <div class="col-md-4 text-md-end">
+                    <p class="small text-secondary mb-1">System Architecture by</p>
+                    <p class="small text-light fw-bold mb-0">Shivam Panchal, Shivam Aggrawal & Shahil Mansuri</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
