@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Evil - Login Page</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* --- Custom Umbrella Terminal Theme --- */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            /* Terminal Background Image */
+            background-image: url('C:/Users/SHIVAM/OneDrive/Desktop/Resident Evil Project/Home Page Background.jpg');
+            background-color: rgba(10, 10, 10, 0.85);
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Glitch Animation for the Header */
+        .glitch-text {
+            color: #ff3333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glitch 4s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 96%, 100% { text-shadow: none; transform: none; }
+            97% { text-shadow: 2px 0 0 red, -2px 0 0 blue; transform: skewX(2deg); }
+            98% { text-shadow: -2px 0 0 red, 2px 0 0 blue; transform: skewX(-2deg); }
+            99% { text-shadow: 2px 0 0 blue, -2px 0 0 red; }
+        }
+
+        /* Login Card Styling */
+        .login-card {
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(8px);
+            border: 2px solid #4a0000 !important;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+
+        /* Custom Input Focus */
+        .form-control:focus {
+            background-color: #222;
+            color: #fff;
+            border-color: #ff3333;
+            box-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+        }
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                
+                <div class="card login-card p-4 text-center rounded-0">
+                    <div class="card-body">
+                        <h2 class="fw-bold glitch-text mb-1">UMBRELLA CORP</h2>
+                        <p class="text-secondary mb-4 small text-uppercase tracking-wide">Restricted Access Terminal</p>
+                        
+                        <form action="Home Page 1.html">
+                            <div class="mb-3 text-start">
+                                <label for="employeeId" class="form-label text-danger small fw-bold">Employee ID</label>
+                                <input type="text" class="form-control bg-dark text-light border-secondary rounded-0" id="employeeId" placeholder="Enter ID..." required>
+                            </div>
+                            
+                            <div class="mb-4 text-start">
+                                <label for="passcode" class="form-label text-danger small fw-bold">Passcode</label>
+                                <input type="password" class="form-control bg-dark text-light border-secondary rounded-0" id="passcode" placeholder="Enter Passcode..." required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-danger w-100 fw-bold text-uppercase rounded-0 py-2">
+                                Access System
+                            </button>
+                        </form>
+
+                        <div class="mt-4 pt-3 border-top border-danger border-opacity-25">
+                            <p class="text-danger small mb-0 fw-bold" style="font-size: 0.75rem;">
+                                ⚠️ UNAUTHORIZED ACCESS WILL TRIGGER BIOSAFETY LOCKDOWN
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
